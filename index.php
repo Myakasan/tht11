@@ -10,6 +10,7 @@
     <?php
       $json = file_get_contents('data.txt');
       $obj = json_decode($json);
+
       echo "il fait ".$obj->temperature." °C";
       echo " Avec ".$obj->humidite." % d'humidité";
       echo "<br>";
@@ -18,10 +19,15 @@
       $heure = date("H:i");
       echo "Nous sommes le " .$date. " et il est ".$heure;
       echo "<br>";
+
+      $bargraph_height = 161 + $obj->temperature * 4;
+      $bargraph_top = 315 - $obj->temperature * 4;
+
      ?>
 
      <div id="thermometer">
-      <div id="bargraph"></div>
+      <div id="bargraph" style="height:<?php echo $bargraph_height; ?>px; top:<?php echo $bargraph_top; ?>px;">
+      </div>
      </div>
   </body>
 </html>
