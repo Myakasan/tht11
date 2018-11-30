@@ -20,6 +20,8 @@
       echo "<br>";
      ?>
 
-     <img src="./img/thermometer.jpg" alt="termometer">
+     <div id="thermometer">
+      <div id="bargraph"></div>
+     </div>
   </body>
 </html>
