@@ -8,7 +8,18 @@
   <body>
     <h1>Température</h1>
     <?php
-      echo "hello world";
+      $json = file_get_contents('data.txt');
+      $obj = json_decode($json);
+      echo "il fait ".$obj->temperature." °C";
+      echo " Avec ".$obj->humidite." % d'humidité";
+      echo "<br>";
+
+      $date = date("d-m-Y");
+      $heure = date("H:i");
+      echo "Nous sommes le " .$date. " et il est ".$heure;
+      echo "<br>";
      ?>
+
+     <img src="./img/thermometer.jpg" alt="termometer">
   </body>
 </html>
