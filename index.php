@@ -23,6 +23,10 @@
       $bargraph_height = 161 + $obj->temperature * 4;
       $bargraph_top = 315 - $obj->temperature * 4;
 
+      $filename = 'data.txt';
+       {
+      echo "La météo à été mise à jour le : " . date("d-m-Y H:i:s.", filectime($filename));
+      }
      ?>
 
      <div id="thermometer">
