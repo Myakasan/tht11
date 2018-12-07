@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>form</title>
-  </head>
-  <body>
-    <form>
-      <input type="text" name="temperature" value="">
-      <input type="text" name="humidite" value="">
-      <input type="submit" name="valider" value="valider">
-    </form>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>form</title>
+</head>
+
+<body>
+  <form action="store_temp.php" method="post">
+    <span> Température <input type="text" name="temperature" placeholder="Entrez une valeur numérique"></span> <br>
+    <input type="submit" name="valider" value="valider">
+  </form>
+</body>
+
 </html>
