@@ -1,10 +1,23 @@
 <?php
 
-$temperature = $_POST['temperature'];
+$data_json = file_get_contents('php://input');
+$filename_temperature= "data.json";
 
-$monFichier = fopen('data.json', 'r+');
-fputs($monFichier, $temperature);
-fclose($monFichier);
+$data = json_decode($data_json);
+if (! $data){
+  http_response_code(415);
+  exit();
+} elseif (! $data->temperature || ! $data->humidite) {
+  http_response_code(400);
+  exit();
+}
 
 
-echo "Il fait ".$temperature." °C";
+
+
+$op = file_put_contents($filename_temperature, $data_json);
+if (! $op){
+
+  echo "error store";
+
+}
