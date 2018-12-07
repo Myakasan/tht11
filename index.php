@@ -8,7 +8,7 @@
   <body>
     <h1>Température</h1>
     <?php
-      $json = file_get_contents('data.txt');
+      $json = file_get_contents('data.json');
       $obj = json_decode($json);
 
       echo "il fait ".$obj->temperature." °C";
@@ -23,7 +23,7 @@
       $bargraph_height = 161 + $obj->temperature * 4;
       $bargraph_top = 315 - $obj->temperature * 4;
 
-      $filename = 'data.txt';
+      $filename = 'data.json';
        {
       echo "La météo à été mise à jour le : " . date("d-m-Y H:i:s.", filectime($filename));
       }

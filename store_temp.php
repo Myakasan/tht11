@@ -2,7 +2,7 @@
 
 $temperature = $_POST['temperature'];
 
-$monFichier = fopen('temperature.txt', 'r+');
+$monFichier = fopen('data.json', 'r+');
 fputs($monFichier, $temperature);
 fclose($monFichier);
 
